@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Home page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" href="/reset.css"/>
+    <link rel="stylesheet" href="/base.css"/>
+    <link rel="stylesheet" href="/main.css"/>
+    <link rel="stylesheet" href="/concerts.css"/>
+
+
+    <style>
+        @font-face {
+            font-family: Cloister;
+            src: url(/fonts/CloisterBlack.ttf);
+        }
+
+        @font-face {
+            font-family: Roboto;
+            src: url(/fonts/Roboto-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: AquaG;
+            src: url(/fonts/aqua.ttf);
+        }
+    </style>
+</head>
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main class="main">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="event">
+                <div class="event-image">
+                    <img class="event-pic" src="/img/o8asBTPdb4w.png" alt="">
+                </div>
+                <hr>
+                <div th:each="el:${events}" class="event-info-wrapper">
+                    <div class="event-info">
+                        <div style="text-align: center;"><h2 th:text="${el.event_name}">Lovv66</h2></div>
+                        <hr>
+                        <div th:each="ell:${cities}" class="event-city">
+                            <h3 class="city" th:text="${ell.city_name}">K</h3>
+                            <span>|</span>
+                            <h3 class="venue">Krasnaya st, 5</h3>
+                            <span>|</span>
+                            <span class="event-price">1000</span>
+                            <span class="event-date">dd</span>
+                        </div>
+
+                    </div>
+                    <div class="event-buy">
+                        <button><img src="/img/cart-17-32.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>
